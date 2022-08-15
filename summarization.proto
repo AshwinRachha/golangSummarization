@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "./pb";
+
+message SummaryRequest {
+  string request = 1;
+}
+
+message SummaryResponse {
+  repeated string response = 1;
+}
+
+service Summarization {
+  rpc GetSummary(SummaryRequest) returns (SummaryResponse);
+
+}
